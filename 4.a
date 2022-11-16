@@ -1,0 +1,50 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+df = pd.read_csv('mtcars.csv')
+
+x=df.wt
+y=df.mpg
+plt.xlabel('Weight')
+plt.ylabel('Mpg')
+plt.scatter(x,y)
+plt.title('scater plot')
+plt.show()
+
+
+e = df.wt
+u = df.model
+plt.plot(e,u)
+plt.title('line graph')
+plt.show()
+
+y= df.mpg
+plt.hist(y,   bins = 5 ,);
+plt.title('histogram')
+plt.show()
+
+a=df.carb
+b=df.model
+plt.xlabel('TRANSMISSION TYPE')
+plt.ylabel('MODEL')
+plt.bar(a,b,color ='red',edgecolor='black',linewidth=5 )
+plt.title('bar graph')
+plt.show()
+
+plt.pie(a, labels=b)
+plt.title("Pie Chart")
+cols = ['b','c','g', 'orange']
+plt.pie(a,
+labels =b,
+colors = cols,
+startangle = 90,
+shadow = True,
+autopct ='%0.2f%%')
+plt.show()
+
+import seaborn as sns
+
+# adding data points
+sns.boxplot(df['hp'])
+plt.title('box plot')
+# display plot
+plt.show()
