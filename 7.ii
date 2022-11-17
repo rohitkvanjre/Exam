@@ -1,0 +1,15 @@
+import matplotlib
+from matplotlib import pyplot as plt
+import pandas as pd
+import numpy as np
+
+df=pd.read_csv("cars420.csv")
+
+mode1=df['MPG_city'].mode()
+print("Highest frequency : ",mode1)
+
+fig=plt.figure()
+x=df.MPG_city
+plt.title("Frequency distribution")
+plt.xlabel("MPG_city")
+plt.hist(x, bins=5, edgecolor="black")
