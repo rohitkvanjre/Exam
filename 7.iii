@@ -1,0 +1,9 @@
+import matplotlib
+from matplotlib import pyplot as plt
+import pandas as pd
+
+fig=plt.figure()
+x=df.Horsepower
+y=df.MPG_city
+plt.title("Sactter")
+plt.scatter(x,y)
