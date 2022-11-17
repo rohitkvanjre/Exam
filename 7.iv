@@ -1,0 +1,11 @@
+import matplotlib
+from matplotlib import pyplot as plt
+import pandas as pd
+
+df=df.head()
+
+fig=plt.figure()
+x=df.EngineSize
+y=df.Horsepower
+plt.title("Variations between Enginesize and Horsepower")
+plt.plot(x,y)
