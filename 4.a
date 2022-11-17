@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+import timeit
 from operator import add
 from functools import reduce
 
@@ -7,15 +9,35 @@ Coding= {'subject' :['python','java'],  'amount':[1000,2000]}
 df = pd.DataFrame(Coding)
 print(df)
 
+#map function
 print("\n  map operation to multiply amount by 2\n")
 df['amount'] = df['amount'].map(lambda x: x*2)
 print(df)
 print("\n")
 
+#filter function
 print("\n operation of filter to display only subject column\n")
 df2=df.filter(items=['subject'])
 print(df2)
 
+#reduce function
 print("\n reduce operation to find total amount\n")
-
 reduce(add,df.amount)
+ 
+# vectorized sum
+print(sum(range(4)))
+ 
+print("Time taken by vectorized sum : ",end= "")
+%timeit sum(range(4))
+
+#aggregate function
+# Creating our dataset
+df = pd.DataFrame([[9, 4, 8, 9],
+				[8, 10, 7, 6],
+				[7, 6, 8, 5]],
+				columns=['Maths', 'English',
+						'Science', 'History'])
+
+# display dataset
+print(df)
+df.agg(['sum', 'min', 'max','mean','median','std','count','size',])
